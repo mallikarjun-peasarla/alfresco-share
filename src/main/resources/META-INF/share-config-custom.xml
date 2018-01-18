@@ -1,0 +1,251 @@
+<!-- Share configuration related to this particular Share module extension, 
+  such as: - Doclib action config - Form config - Aspect and Type config Note. 
+  Any configuration related to the whole Share.war webapp (i.e. not specific 
+  to this share extension) should be placed in the environment specific config: 
+  alfresco/tomcat/shared/classes/alfresco/web-extension/share-config-custom.xml 
+  file -->
+<alfresco-config>
+
+  <config evaluator="aspect" condition="sc:webable">        <!-- webable aspect -->
+    <forms>
+      <form>
+        <field-visibility>
+          <show id="sc:published" />
+          <show id="sc:isActive" />
+        </field-visibility>
+        <appearance>
+          <field id="sc:isActive" read-only="true" />       <!-- prevents share users from editing the property. Only can be set through scripts or API calls -->
+        </appearance>
+      </form>
+    </forms>
+  </config>
+
+  <config evaluator="aspect" condition="sc:clientRelated">  <!-- clientRelated aspect -->
+    <forms>
+      <form>
+        <field-visibility>
+          <show id="sc:clientName" />
+          <show id="sc:projectName" />
+        </field-visibility>
+      </form>
+    </forms>
+  </config>
+    
+  <config evaluator="node-type" condition="sc:doc">     <!-- relatedDocuments association -->
+    <forms>
+      <form>
+        <field-visibility>                              <!-- all properties from cm:content + relatedDocuments aspect -->
+          <show id="cm:name" />
+          <show id="cm:title" force="true" />
+          <show id="cm:description" force="true" />
+          <show id="mimetype" />
+          <show id="cm:author" force="true" />
+          <show id="size" for-mode="view" />
+          <show id="cm:creator" for-mode="view" />
+          <show id="cm:created" for-mode="view" />
+          <show id="cm:modifier" for-mode="view" />
+          <show id="cm:modified" for-mode="view" />
+          <show id="sc:relatedDocuments" />
+        </field-visibility>
+      </form>
+    </forms>
+  </config>
+  <config evaluator="node-type" condition="sc:marketingDoc">    <!-- MarketingDocuments association -->
+    <forms>
+      <form>
+        <field-visibility>                                      <!-- properties from sc:doc(<cm:content) + sc:campaign property -->
+          <show id="cm:name" />
+          <show id="cm:title" force="true" />
+          <show id="cm:description" force="true" />
+          <show id="mimetype" />
+          <show id="cm:author" force="true" />
+          <show id="size" for-mode="view" />
+          <show id="cm:creator" for-mode="view" />
+          <show id="cm:created" for-mode="view" />
+          <show id="cm:modifier" for-mode="view" />
+          <show id="cm:modified" for-mode="view" />
+          <show id="sc:campaign" />
+          <show id="sc:relatedDocuments" />
+        </field-visibility>
+      </form>
+    </forms>
+  </config>
+
+  <config evaluator="node-type" condition="sc:whitepaper">
+    <forms>
+      <form>
+        <field-visibility>                                      <!-- properties from sc:marketingDoc(<sc:doc) -->
+          <show id="cm:name" />
+          <show id="cm:title" force="true" />
+          <show id="cm:description" force="true" />
+          <show id="mimetype" />
+          <show id="cm:author" force="true" />
+          <show id="size" for-mode="view" />
+          <show id="cm:creator" for-mode="view" />
+          <show id="cm:created" for-mode="view" />
+          <show id="cm:modifier" for-mode="view" />
+          <show id="cm:modified" for-mode="view" />
+          <show id="sc:campaign" />
+          <show id="sc:relatedDocuments" />
+        </field-visibility>
+      </form>
+    </forms>
+  </config>
+
+  <config evaluator="node-type" condition="sc:hrDoc">
+    <forms>
+      <form>
+        <field-visibility>                                      <!-- properties from sc:doc(<cm:content) -->
+          <show id="cm:name" />
+          <show id="cm:title" force="true" />
+          <show id="cm:description" force="true" />
+          <show id="mimetype" />
+          <show id="cm:author" force="true" />
+          <show id="size" for-mode="view" />
+          <show id="cm:creator" for-mode="view" />
+          <show id="cm:created" for-mode="view" />
+          <show id="cm:modifier" for-mode="view" />
+          <show id="cm:modified" for-mode="view" />
+          <show id="sc:relatedDocuments" />
+        </field-visibility>
+      </form>
+    </forms>
+  </config>
+
+  <config evaluator="node-type" condition="sc:salesDoc">
+    <forms>
+      <form>
+        <field-visibility>                                      <!-- properties from sc:doc(<cm:content) -->
+          <show id="cm:name" />
+          <show id="cm:title" force="true" />
+          <show id="cm:description" force="true" />
+          <show id="mimetype" />
+          <show id="cm:author" force="true" />
+          <show id="size" for-mode="view" />
+          <show id="cm:creator" for-mode="view" />
+          <show id="cm:created" for-mode="view" />
+          <show id="cm:modifier" for-mode="view" />
+          <show id="cm:modified" for-mode="view" />
+          <show id="sc:relatedDocuments" />
+        </field-visibility>
+      </form>
+    </forms>
+  </config>
+
+  <config evaluator="node-type" condition="sc:opsDoc">
+    <forms>
+      <form>
+        <field-visibility>                                      <!-- properties from sc:doc(<cm:content) -->
+          <show id="cm:name" />
+          <show id="cm:title" force="true" />
+          <show id="cm:description" force="true" />
+          <show id="mimetype" />
+          <show id="cm:author" force="true" />
+          <show id="size" for-mode="view" />
+          <show id="cm:creator" for-mode="view" />
+          <show id="cm:created" for-mode="view" />
+          <show id="cm:modifier" for-mode="view" />
+          <show id="cm:modified" for-mode="view" />
+          <show id="sc:relatedDocuments" />
+        </field-visibility>
+      </form>
+    </forms>
+  </config>
+
+  <config evaluator="node-type" condition="sc:legalDoc">
+    <forms>
+      <form>
+        <field-visibility>                                      <!-- properties from sc:doc(<cm:content) -->
+          <show id="cm:name" />
+          <show id="cm:title" force="true" />
+          <show id="cm:description" force="true" />
+          <show id="mimetype" />
+          <show id="cm:author" force="true" />
+          <show id="size" for-mode="view" />
+          <show id="cm:creator" for-mode="view" />
+          <show id="cm:created" for-mode="view" />
+          <show id="cm:modifier" for-mode="view" />
+          <show id="cm:modified" for-mode="view" />
+          <show id="sc:relatedDocuments" />
+        </field-visibility>
+      </form>
+    </forms>
+  </config>
+
+
+  <!-- Document Library config section -->
+  <config evaluator="string-compare" condition="DocumentLibrary"
+    replace="true">
+    <aspects>
+      <visible>
+        <aspect name="cm:replaceable" />
+        <aspect name="cm:generalclassifiable" />
+        <aspect name="cm:complianceable" />
+        <aspect name="cm:dublincore" />
+        <aspect name="cm:effectivity" />
+        <aspect name="cm:summarizable" />
+        <aspect name="cm:versionable" />
+        <aspect name="cm:templatable" />
+        <aspect name="cm:emailed" />
+        <aspect name="emailserver:aliasable" />
+        <aspect name="cm:taggable" />
+        <aspect name="app:inlineeditable" />
+        <aspect name="cm:geographic" />
+        <aspect name="exif:exif" />
+        <aspect name="audio:audio" />
+        <aspect name="cm:indexControl" />
+        <aspect name="dp:restrictable" />
+        <aspect name="smf:customConfigSmartFolder" />
+        <aspect name="smf:systemConfigSmartFolder" />
+        <aspect name="sc:webable" />
+        <aspect name="sc:clientRelated" />
+        <aspect name="sc:rateable" />
+      </visible>
+
+      <!-- Aspects that a user can add. Same as "visible" if left empty -->
+      <addable>
+      </addable>
+
+      <!-- Aspects that a user can remove. Same as "visible" if left empty -->
+      <removeable>
+      </removeable>
+    </aspects>
+
+    <types>
+      <type name="cm:content">
+        <subtype name="smf:smartFolderTemplate" />
+        <subtype name="sc:doc" />
+        <subtype name="sc:marketingDoc" />
+        <subtype name="sc:whitepaper" />
+        <subtype name="sc:hrDoc" />
+        <subtype name="sc:salesDoc" />
+        <subtype name="sc:opsDoc" />
+        <subtype name="sc:legalDoc" />
+        <subtype name="sc:hrPolicy" />
+      </type>
+
+      <type name="sc:doc">
+        <subtype name="sc:marketingDoc" />
+        <subtype name="sc:whitepaper" />
+        <subtype name="sc:hrDoc" />
+        <subtype name="sc:salesDoc" />
+        <subtype name="sc:opsDoc" />
+        <subtype name="sc:legalDoc" />
+        <subtype name="sc:hrPolicy" />
+      </type>
+
+      <type name="sc:hrDoc">
+        <subtype name="sc:hrPolicy" />
+      </type>
+
+      <type name="cm:folder">
+      </type>
+
+      <type name="trx:transferTarget">
+        <subtype name="trx:fileTransferTarget" />
+      </type>
+    </types>
+
+  </config>
+
+</alfresco-config>
