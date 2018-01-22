@@ -50,7 +50,29 @@
       </form>
     </forms>
   </config>
-  <config evaluator="node-type" condition="sc:marketingDoc">    <!-- MarketingDocuments association -->
+
+  <config evaluator="model-type" condition="sc:doc">
+    <forms>
+      <form id="search">
+        <field-visibility>
+          <show id="cm:name" />
+          <show id="cm:title" force="true" />
+          <show id="cm:description" force="true" />
+          <show id="mimetype" />
+          <show id="cm:author" force="true" />
+          <show id="size" for-mode="view" />
+          <show id="cm:creator" for-mode="view" />
+          <show id="cm:created" for-mode="view" />
+          <show id="cm:modifier" for-mode="view" />
+          <show id="cm:modified" for-mode="view" />
+          <!-- <show id="sc:campaign" /> -->
+          <show id="sc:relatedDocuments" />
+        </field-visibility>
+      </form>
+    </forms>
+  </config>
+
+  <config evaluator="node-type" condition="sc:marketingDoc">
     <forms>
       <form>
         <field-visibility>                                      <!-- properties from sc:doc(<cm:content) + sc:campaign property -->
@@ -62,6 +84,27 @@
           <show id="size" for-mode="view" />
           <show id="cm:creator" for-mode="view" />
           <show id="cm:created" for-mode="view" />
+          <show id="cm:modifier" for-mode="view" />
+          <show id="cm:modified" for-mode="view" />
+          <show id="sc:campaign" />
+          <show id="sc:relatedDocuments" />
+        </field-visibility>
+      </form>
+    </forms>
+  </config>
+
+  <config evaluator="model-type" condition="sc:marketingDoc">
+    <forms>
+      <form id="search">
+        <field-visibility>
+          <show id="cm:name" />
+          <show id="cm:title" force="true" />
+          <show id="cm:description" force="true" />
+          <show id="mimetype" />
+          <!--  <show id="cm:author" force="true" />  -->
+          <!--  <show id="size" for-mode="view" />  -->
+          <!--  <show id="cm:creator" for-mode="view" />  -->
+          <!--  <show id="cm:created" for-mode="view" />  -->          
           <show id="cm:modifier" for-mode="view" />
           <show id="cm:modified" for-mode="view" />
           <show id="sc:campaign" />
@@ -92,6 +135,27 @@
     </forms>
   </config>
 
+  <config evaluator="model-type" condition="sc:whitepaper">
+    <forms>
+      <form id="search">
+        <field-visibility>
+          <show id="cm:name" />
+          <show id="cm:title" force="true" />
+          <show id="cm:description" force="true" />
+          <show id="mimetype" />
+          <!--  <show id="cm:author" force="true" />  -->
+          <!--  <show id="size" for-mode="view" />  -->
+          <!--  <show id="cm:creator" for-mode="view" />  -->
+          <!--  <show id="cm:created" for-mode="view" />  -->
+          <show id="cm:modifier" for-mode="view" />
+          <show id="cm:modified" for-mode="view" />
+          <show id="sc:campaign" />
+          <show id="sc:relatedDocuments" />
+        </field-visibility>
+      </form>
+    </forms>
+  </config>
+
   <config evaluator="node-type" condition="sc:hrDoc">
     <forms>
       <form>
@@ -106,6 +170,27 @@
           <show id="cm:created" for-mode="view" />
           <show id="cm:modifier" for-mode="view" />
           <show id="cm:modified" for-mode="view" />
+          <show id="sc:relatedDocuments" />
+        </field-visibility>
+      </form>
+    </forms>
+  </config>
+
+  <config evaluator="model-type" condition="sc:hrDoc">
+    <forms>
+      <form id="search">
+        <field-visibility>
+          <show id="cm:name" />
+          <show id="cm:title" force="true" />
+          <show id="cm:description" force="true" />
+          <show id="mimetype" />
+          <show id="cm:author" force="true" />
+          <show id="size" for-mode="view" />
+          <show id="cm:creator" for-mode="view" />
+          <show id="cm:created" for-mode="view" />
+          <show id="cm:modifier" for-mode="view" />
+          <show id="cm:modified" for-mode="view" />
+          <!-- <show id="sc:campaign" /> -->
           <show id="sc:relatedDocuments" />
         </field-visibility>
       </form>
@@ -132,6 +217,27 @@
     </forms>
   </config>
 
+  <config evaluator="model-type" condition="sc:salesDoc">
+    <forms>
+      <form id="search">
+        <field-visibility>
+          <show id="cm:name" />
+          <show id="cm:title" force="true" />
+          <show id="cm:description" force="true" />
+          <show id="mimetype" />
+          <show id="cm:author" force="true" />
+          <show id="size" for-mode="view" />
+          <show id="cm:creator" for-mode="view" />
+          <show id="cm:created" for-mode="view" />
+          <show id="cm:modifier" for-mode="view" />
+          <show id="cm:modified" for-mode="view" />
+          <!-- <show id="sc:campaign" /> -->
+          <show id="sc:relatedDocuments" />
+        </field-visibility>
+      </form>
+    </forms>
+  </config>
+
   <config evaluator="node-type" condition="sc:opsDoc">
     <forms>
       <form>
@@ -146,6 +252,27 @@
           <show id="cm:created" for-mode="view" />
           <show id="cm:modifier" for-mode="view" />
           <show id="cm:modified" for-mode="view" />
+          <show id="sc:relatedDocuments" />
+        </field-visibility>
+      </form>
+    </forms>
+  </config>
+
+  <config evaluator="model-type" condition="sc:opsDoc">
+    <forms>
+      <form id="search">
+        <field-visibility>
+          <show id="cm:name" />
+          <show id="cm:title" force="true" />
+          <show id="cm:description" force="true" />
+          <show id="mimetype" />
+          <show id="cm:author" force="true" />
+          <show id="size" for-mode="view" />
+          <show id="cm:creator" for-mode="view" />
+          <show id="cm:created" for-mode="view" />
+          <show id="cm:modifier" for-mode="view" />
+          <show id="cm:modified" for-mode="view" />
+          <!-- <show id="sc:campaign" /> -->
           <show id="sc:relatedDocuments" />
         </field-visibility>
       </form>
@@ -172,6 +299,26 @@
     </forms>
   </config>
 
+  <config evaluator="model-type" condition="sc:legalDoc">
+    <forms>
+      <form id="search">
+        <field-visibility>
+          <show id="cm:name" />
+          <show id="cm:title" force="true" />
+          <show id="cm:description" force="true" />
+          <show id="mimetype" />
+          <show id="cm:author" force="true" />
+          <show id="size" for-mode="view" />
+          <show id="cm:creator" for-mode="view" />
+          <show id="cm:created" for-mode="view" />
+          <show id="cm:modifier" for-mode="view" />
+          <show id="cm:modified" for-mode="view" />
+          <!-- <show id="sc:campaign" /> -->
+          <show id="sc:relatedDocuments" />
+        </field-visibility>
+      </form>
+    </forms>
+  </config>
 
   <!-- Document Library config section -->
   <config evaluator="string-compare" condition="DocumentLibrary"
@@ -246,6 +393,20 @@
       </type>
     </types>
 
+  </config>
+
+  <config evaluator="string-compare" condition="AdvancedSearch">
+    <advanced-search>
+      <forms>
+        <form labelId="type.sc_doc" descriptionId="search.form.label.sc_doc">sc:doc</form>
+        <form labelId="type.sc_marketingDoc" descriptionId="search.form.label.sc_marketingDoc">sc:marketingDoc</form>
+        <form labelId="type.sc_whitepaper" descriptionId="search.form.label.sc_whitepaper">sc:whitepaper</form>
+        <form labelId="type.sc_hrDoc" descriptionId="search.form.label.sc_hrDoc">sc:hrDoc</form>
+        <form labelId="type.sc_salesDoc" descriptionId="search.form.label.sc_salesDoc">sc:salesDoc</form>
+        <form labelId="type.sc_opsDoc" descriptionId="search.form.label.sc_opsDoc">sc:opsDoc</form>
+        <form labelId="type.sc_legalDoc" descriptionId="search.form.label.sc_legalDoc">sc:legalDoc</form>
+      </forms>
+    </advanced-search>
   </config>
 
 </alfresco-config>
