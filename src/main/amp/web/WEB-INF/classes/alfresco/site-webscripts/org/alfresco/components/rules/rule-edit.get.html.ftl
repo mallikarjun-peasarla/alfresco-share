@@ -37,6 +37,7 @@
    <@script src="${url.context}/res/components/object-finder/object-finder.js" group="rules"/>
    <@script src="${url.context}/res/modules/form/control-wrapper.js" group="rules"/>
    <@script src="${url.context}/res/components/common/common-component-style-filter-chain.js" group="rules"/>
+   <@script src="${url.context}/res/js/someco/someco-action.js" group="rules"/>
 </@>
 
 <@markup id="widgets">

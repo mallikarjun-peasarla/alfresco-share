@@ -325,7 +325,6 @@
     replace="true">
     <aspects>
       <visible>
-        <aspect name="cm:replaceable" />
         <aspect name="cm:generalclassifiable" />
         <aspect name="cm:complianceable" />
         <aspect name="cm:dublincore" />
@@ -347,6 +346,7 @@
         <aspect name="sc:webable" />
         <aspect name="sc:clientRelated" />
         <aspect name="sc:rateable" />
+        <aspect name="cm:replaceable" />
       </visible>
 
       <!-- Aspects that a user can add. Same as "visible" if left empty -->
@@ -368,7 +368,7 @@
         <subtype name="sc:salesDoc" />
         <subtype name="sc:opsDoc" />
         <subtype name="sc:legalDoc" />
-        <subtype name="sc:hrPolicy" />
+        <subtype name="sc:hrPolicy"/>
       </type>
 
       <type name="sc:doc">
@@ -378,11 +378,11 @@
         <subtype name="sc:salesDoc" />
         <subtype name="sc:opsDoc" />
         <subtype name="sc:legalDoc" />
-        <subtype name="sc:hrPolicy" />
+        <subtype name="sc:hrPolicy"/>
       </type>
 
       <type name="sc:hrDoc">
-        <subtype name="sc:hrPolicy" />
+        <subtype name="sc:hrPolicy"/>
       </type>
 
       <type name="cm:folder">
@@ -407,6 +407,16 @@
         <form labelId="type.sc_legalDoc" descriptionId="search.form.label.sc_legalDoc">sc:legalDoc</form>
       </forms>
     </advanced-search>
+  </config>
+
+  <config evaluator="aspect" condition="cm:replaceable">
+    <forms>
+      <form>
+        <field-visibility>
+          <show id="cm:replaces" />
+        </field-visibility>
+      </form>
+    </forms>
   </config>
 
 </alfresco-config>

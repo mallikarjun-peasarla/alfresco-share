@@ -14,6 +14,7 @@
    <@script src="${url.context}/res/components/rules/config/rule-config-condition.js" group="rules"/>
    <@script src="${url.context}/res/components/rules/config/rule-config-action.js" group="rules"/>
    <@script src="${url.context}/res/components/rules/rule-details.js" group="rules"/>
+   <@script src="${url.context}/res/js/someco/someco-action.js" group="rules"/>
 </@>
 
 <@markup id="widgets">

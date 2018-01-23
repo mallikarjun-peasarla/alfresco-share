@@ -1,7 +1,7 @@
 <rule-config type="action">
 
    <!-- This defines the client-side JavaScript widget to instantiate -->
-   <component>Alfresco.RuleConfigAction</component>
+   <component>SomeCo.RuleConfigActionCustom</component>
 
    <!-- The "webscript" attribute defines a repository WebScript from which to retrieve some
         data. The remove element will be processed to remove any matching elements from the 
@@ -91,6 +91,7 @@
       <action name="transform-image">Transform</action>
       <action name="import">Import</action>
       <action name="set-property-value">SetPropertyValue</action>
+	   <action name="move-replaced">MoveReplaced</action>
    </customise>
 
 </rule-config>
